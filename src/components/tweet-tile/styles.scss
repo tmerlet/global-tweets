@@ -1,0 +1,37 @@
+.tweet-tile {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid blue;
+  min-height: 87px;
+
+  .image {
+    margin-right: 10px;
+    border-radius: 3px;
+
+    img {
+      width: 58px;
+      height: 58px;
+    }
+  }
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .name {
+    font-weight: 500;
+  }
+
+  .handle {
+    margin-left: 10px;
+  }
+
+  .date {
+    float: right;
+    font-size: 12px;
+  }
+
+  .tweet {
+    font-size: 14px;
+  }
+}
