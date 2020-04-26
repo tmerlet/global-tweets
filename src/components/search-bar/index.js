@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import '@atlaskit/css-reset';
 import './styles.scss';
 
@@ -24,5 +25,11 @@ export class SearchBar extends Component {
     );
   }
 }
+
+SearchBar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  queery: PropTypes.string.isRequired
+};
 
 export default SearchBar;

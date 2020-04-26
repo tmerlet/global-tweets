@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import TweetTile from '../tweet-tile';
 import { Droppable } from 'react-beautiful-dnd';
 import './styles.scss';
@@ -25,6 +26,11 @@ const TweetContainer = ({ tweets = [], droppableId }) => {
       )}
     </Droppable>
   );
+};
+
+TweetContainer.propTypes = {
+  tweets: PropTypes.array.isRequired,
+  droppableId: PropTypes.string.isRequired
 };
 
 export default TweetContainer;

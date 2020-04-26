@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Draggable } from 'react-beautiful-dnd';
 import './styles.scss';
 
@@ -32,6 +33,12 @@ const TweetTile = ({ tweet, id, index }) => {
       )}
     </Draggable>
   );
+};
+
+TweetTile.propTypes = {
+  tweet: PropTypes.object.isRequired,
+  id: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired
 };
 
 export default TweetTile;

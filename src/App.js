@@ -50,6 +50,9 @@ class App extends Component {
 
   handleSearchSubmit = (e) => {
     e.preventDefault();
+    if (!this.state.searchQueery) {
+      return;
+    }
     fetch(
       `https://cors-anywhere.herokuapp.com/http://tweetsaver.herokuapp.com/?q=${this.state.searchQueery}&count=10`
     )
