@@ -5,13 +5,11 @@ import './styles.scss';
 const TweetTile = ({ tweet, id, index }) => {
   const tweetDate = new Date(tweet.createdAt).toLocaleDateString();
 
-  console.log('tweetDate', tweetDate);
-
   return (
     <Draggable draggableId={`${id}`} index={index}>
-      {(provided) => (
+      {(provided, snapshot) => (
         <div
-          className="tweet-tile"
+          className={`${snapshot.isDragging ? 'is-dragging' : ''} tweet-tile`}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
@@ -21,8 +19,10 @@ const TweetTile = ({ tweet, id, index }) => {
           </div>
           <div className="details-container">
             <div className="title">
-              <span className="name">{tweet.user.name}</span>
-              <span className="handle">{`@${tweet.user.screenName}`}</span>
+              <div>
+                <span className="name">{tweet.user.name}</span>
+                <span className="handle">{`@${tweet.user.screenName}`}</span>
+              </div>
               <span className="date">{tweetDate}</span>
             </div>
             <div className="tweet">{tweet.text}</div>

@@ -1,4 +1,18 @@
 .App {
   max-width: 980px;
   margin: 0 auto;
+  font-family: 'Roboto Mono', monospace;
+
+  .columns-container {
+    display: flex;
+    justify-content: space-between;
+
+    .column {
+      margin: 0 10px;
+    }
+
+    .column-title {
+      height: 45px;
+    }
+  }
 }

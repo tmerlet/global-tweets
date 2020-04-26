@@ -4,7 +4,6 @@ import { Droppable } from 'react-beautiful-dnd';
 import './styles.scss';
 
 const TweetContainer = ({ tweets = [], droppableId }) => {
-  console.log('tweets: ', tweets);
   return (
     <Droppable droppableId={droppableId}>
       {(provided) => (
