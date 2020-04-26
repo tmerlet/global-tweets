@@ -3,9 +3,9 @@ import './styles.scss';
 
 const Header = () => {
   return (
-    <div className="header">
+    <header className="header">
       <h1 className="title">Tweet Saver</h1>
-    </div>
+    </header>
   );
 };
 

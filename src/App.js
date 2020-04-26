@@ -68,23 +68,23 @@ class App extends Component {
       <div className="App">
         <Header />
         <DragDropContext onDragEnd={this.onDragEnd}>
-          <div className="columns-container">
-            <div className="column">
+          <main className="columns-container">
+            <section className="column">
               <SearchBar
                 onChange={this.handleSearchChange}
                 onSubmit={this.handleSearchSubmit}
                 queery={this.state.searchQueery}
               />
               <TweetContainer tweets={this.state.tweets} droppableId="tweets" />
-            </div>
-            <div className="column">
+            </section>
+            <section className="column">
               <h4 className="column-title">Saved Tweets</h4>
               <TweetContainer
                 tweets={this.state.savedTweets}
                 droppableId="savedTweets"
               />
-            </div>
-          </div>
+            </section>
+          </main>
         </DragDropContext>
       </div>
     );

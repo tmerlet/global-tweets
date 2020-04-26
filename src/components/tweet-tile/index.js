@@ -9,27 +9,27 @@ const TweetTile = ({ tweet, id, index }) => {
   return (
     <Draggable draggableId={`${id}`} index={index}>
       {(provided, snapshot) => (
-        <div
+        <article
           className={`${snapshot.isDragging ? 'is-dragging' : ''} tweet-tile`}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
         >
-          <div className="image">
+          <aside className="image">
             <img src={tweet.user.profileImageUrlHttps} alt="user" />
-          </div>
+          </aside>
           <div className="details-container">
-            <div className="title">
+            <header className="title">
               <div>
                 <span className="name">{tweet.user.name}</span>
                 <span className="handle">{`@${tweet.user.screenName}`}</span>
               </div>
               <span className="date">{tweetDate}</span>
-            </div>
-            <div className="tweet">{tweet.text}</div>
+            </header>
+            <p className="tweet">{tweet.text}</p>
           </div>
           <br />
-        </div>
+        </article>
       )}
     </Draggable>
   );
